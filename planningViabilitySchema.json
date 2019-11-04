@@ -1,6 +1,9 @@
 { "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
   "type": "object",
+  "propertyNames": {
+   "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
   "required": [ "application.identifier" ],
   "properties": {
     "application.planningAuthorityID": { "type": "string" },
@@ -18,19 +21,19 @@
             }
           ]
   		},
-    "proposal.residentialUnits": { "type": "string" },
-    "proposal.habitableRooms": { "type": "string" },
-    "proposal.commercialArea": { "type": "string" },
-    "proposal.storiesMax": { "type": "string" },
+    "proposal.residentialUnits": { "type": "number" },
+    "proposal.habitableRooms": { "type": "number" },
+    "proposal.commercialArea": { "type": "number" },
+    "proposal.storiesMax": { "type": "number" },
     "date": { "type": "string" },
-    "proposal.grossDevelopmentValue": { "type": "string" },
-    "proposal.constructionCostsTotal": { "type": "string" },
-    "proposal.professionalFeesTotal": { "type": "string" },
-    "proposal.marketingAndLettingFeesTotal": { "type": "string" },
-    "proposal.financeCostTotal": { "type": "string" },
-    "proposal.planningObligationsCostTotal": { "type": "string" },
-    "proposal.developerProfitTotal": { "type": "string" },
-    "proposal.residualLandValue": { "type": "string" },
-    "proposal.benchmarkLandValue": { "type": "string" }
+    "proposal.grossDevelopmentValue": { "type": "number" },
+    "proposal.constructionCostsTotal": { "type": "number" },
+    "proposal.professionalFeesTotal": { "type": "number" },
+    "proposal.marketingAndLettingFeesTotal": { "type": "number" },
+    "proposal.financeCostTotal": { "type": "number" },
+    "proposal.planningObligationsCostTotal": { "type": "number" },
+    "proposal.developerProfitTotal": { "type": "number" },
+    "proposal.residualLandValue": { "type": "number" },
+    "proposal.benchmarkLandValue": { "type": "number" }
     }
 }
