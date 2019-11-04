@@ -1,0 +1,27 @@
+{ "$schema": "http://json-schema.org/schema#",
+  "$id": "https://github.com/wearefuturegov",
+  "type": "object",
+  "properties": {
+    "application.planningAuthorityID": { "type": "string" },
+    "application.identifier": { "type": "string" },
+    "application.name": { "type": "string" },
+    "property.addressPrimary": { "type": "string" },
+    "property.boundaryPolygon": { "type": "string" },
+    "proposal.residentialUnits": { "type": "string" },
+    "proposal.habitableRooms": { "type": "string" },
+    "proposal.commercialArea": { "type": "string" },
+    "proposal.storiesMax": { "type": "string" },
+    "date": { "type": "string" },
+    "proposal.grossDevelopmentValue": { "type": "string" },
+    "proposal.constructionCostsTotal": { "type": "string" },
+    "proposal.professionalFeesTotal": { "type": "string" },
+    "proposal.marketingAndLettingFeesTotal": { "type": "string" },
+    "proposal.financeCostTotal": { "type": "string" },
+    "proposal.planningObligationsCostTotal": { "type": "string" },
+    "proposal.developerProfitTotal": { "type": "string" },
+    "proposal.residualLandValue": { "type": "string" },
+    "proposal.benchmarkLandValue": { "type": "string" },
+      }
+    }
+  }
+}
