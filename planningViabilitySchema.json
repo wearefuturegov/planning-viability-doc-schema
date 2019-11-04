@@ -1,5 +1,5 @@
 { "$schema": "http://json-schema.org/schema#",
-  "$id": "https://github.com/wearefuturegov",
+  "$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
   "type": "object",
   "properties": {
     "application.planningAuthorityID": { "type": "string" },
