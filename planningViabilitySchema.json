@@ -1,12 +1,23 @@
-{ "$schema": "http://json-schema.org/schema#",
+{ "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
   "type": "object",
+  "required": [ "application.identifier" ],
   "properties": {
     "application.planningAuthorityID": { "type": "string" },
     "application.identifier": { "type": "string" },
     "application.name": { "type": "string" },
     "property.addressPrimary": { "type": "string" },
-    "property.boundaryPolygon": { "type": "string" },
+    "property.boundaryPolygon": 
+    	{
+    		"anyOf": [
+            {
+              "$ref": "http://geojson.org/schema/MultiPolygon.json"
+            },
+            {
+              "$ref": "http://geojson.org/schema/Polygon.json"
+            }
+          ]
+  		},
     "proposal.residentialUnits": { "type": "string" },
     "proposal.habitableRooms": { "type": "string" },
     "proposal.commercialArea": { "type": "string" },
@@ -20,8 +31,6 @@
     "proposal.planningObligationsCostTotal": { "type": "string" },
     "proposal.developerProfitTotal": { "type": "string" },
     "proposal.residualLandValue": { "type": "string" },
-    "proposal.benchmarkLandValue": { "type": "string" },
-      }
+    "proposal.benchmarkLandValue": { "type": "string" }
     }
-  }
 }
