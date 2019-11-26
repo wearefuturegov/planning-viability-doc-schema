@@ -4,24 +4,29 @@
   "type": "object",
   "version": "0.1.2",
   "propertyNames": {
-    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+    "pattern": "^[A-Za-z_][A-Za-z0-9_.]*$"
   },
-  "required": [
-    "application.identifier"
-  ],
+  "additionalProperties": false,
   "properties": {
     "application": {
-      "application.planningAuthorityID": {
-        "type": "string"
-      },
-      "application.identifier": {
-        "type": "string"
-      },
-      "application.name": {
-        "type": "string"
+      "type": "object",
+      "required": ["application.identifier"],
+      "properties": {
+        "application.planningAuthorityID": {
+          "type": "string"
+        },
+        "application.identifier": {
+          "type": "string"
+        },
+        "application.name": {
+          "type": "string"
+        }
       }
     },
     "property": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties":{
       "property.addressPrimary": {
         "type": "string"
       },
@@ -38,8 +43,12 @@
           }
         ]
       }
+      }
     },
     "proposal": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties":{
       "proposal.residentialUnits": {
         "type": "number"
       },
@@ -127,7 +136,7 @@
       },
       "proposal.useClasses": {
         "type": "array",
-        "items": {
+        "classes": {
           "type": "string",
           "enum": [
             "A1",
@@ -155,8 +164,52 @@
       "proposal.viabilityAssessmentScenarioDate": {
         "type": "string"
       },
-      "proposal.salesValuesResidentialAverageByType": "XXXXXX",
-      "proposal.salesValuesResidentialAveragePerSqM": "XXXXXX"
+      "proposal.salesValuesResidentialAverageByType": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "array",
+            "classes": {
+              "type": "string",
+              "enum": [
+                "studio",
+                "1 bed",
+                "2 bed",
+                "3 bed",
+                "4 bed",
+                "5+ bed"
+              ]
+            }
+          },
+          "value": {
+            "type": "string",
+            "description": "the value"
+          }
+        }
+      },
+      "proposal.salesValuesResidentialAveragePerSqM": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "array",
+            "classes": {
+              "type": "string",
+              "enum": [
+                "studio",
+                "1 bed",
+                "2 bed",
+                "3 bed",
+                "4 bed",
+                "5+ bed"
+              ]
+            }
+          },
+          "value": {
+            "type": "number",
+            "description": "Average sales value for this property type per square metre"
+          }
+        }
+      }}
     }
   }
 }

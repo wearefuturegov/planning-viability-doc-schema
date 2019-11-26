@@ -8,34 +8,31 @@
     "property.addressPrimary": "",
     "property.centroidLatLng": "",
     "property.boundaryPolygon": {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
+      "type": "Polygon",
+      "coordinates": [
+        [
           [
-            [
-              100,
-              0
-            ],
-            [
-              101,
-              0
-            ],
-            [
-              101,
-              1
-            ],
-            [
-              100,
-              1
-            ],
-            [
-              100,
-              0
-            ]
+            30,
+            10
+          ],
+          [
+            40,
+            40
+          ],
+          [
+            20,
+            40
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            30,
+            10
           ]
         ]
-      }
+      ]
     }
   },
   "proposal": {
@@ -61,8 +58,6 @@
       "mar": 123,
       "intermediate": 321
     },
-    "proposal": {
-      "proposal.residentialUnits": 22
-    }
+    "proposal.residentialUnits": 22
   }
 }
