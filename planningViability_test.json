@@ -1,0 +1,68 @@
+{
+  "application": {
+    "application.identifier": "SWK",
+    "application.planningAuthorityID": "",
+    "application.name": ""
+  },
+  "property": {
+    "property.addressPrimary": "",
+    "property.centroidLatLng": "",
+    "property.boundaryPolygon": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              100,
+              0
+            ],
+            [
+              101,
+              0
+            ],
+            [
+              101,
+              1
+            ],
+            [
+              100,
+              1
+            ],
+            [
+              100,
+              0
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  "proposal": {
+    "proposal.residentialUnits": 0,
+    "proposal.habitableRooms": 0,
+    "proposal.commercialArea": 0,
+    "proposal.storeysMax": 0,
+    "proposal.grossDevelopmentValue": 0,
+    "proposal.constructionCostsTotal": 0,
+    "proposal.professionalFeesTotal": 0,
+    "proposal.marketingAndLettingFeesTotal": 0,
+    "proposal.financeCostTotal": 0,
+    "proposal.planningObligationsCostTotal": 0,
+    "proposal.developerProfitTotal": 0,
+    "proposal.residualLandValue": 0,
+    "proposal.benchmarkLandValue": 0,
+    "proposal.totalCosts": 0,
+    "proposal.viabilityAssessmentAuthor": "author",
+    "proposal.viabilityAssessmentOnBehalfOf": "behalf",
+    "proposal.viabilityScenarioName": "name",
+    "proposal.netSaleableArea": 0,
+    "proposal.affordableHousingTenureMix": {
+      "mar": 123,
+      "intermediate": 321
+    },
+    "proposal": {
+      "proposal.residentialUnits": 22
+    }
+  }
+}

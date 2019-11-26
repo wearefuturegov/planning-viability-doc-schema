@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
   "type": "object",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "propertyNames": {
     "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
   },
@@ -105,15 +105,47 @@
           "type": "number"
         }
       },
-      "proposal.residentialUnitsMix": "XXXXXX",
+      "proposal.residentialUnitsMix": {
+        "studio": {
+          "type": "number"
+        },
+        "1 bed": {
+          "type": "number"
+        },
+        "2 bed": {
+          "type": "number"
+        },
+        "3 bed": {
+          "type": "number"
+        },
+        "4 bed": {
+          "type": "number"
+        },
+        "5+ bed": {
+          "type": "number"
+        }
+      },
       "proposal.useClasses": {
         "type": "array",
         "items": {
           "type": "string",
           "enum": [
-            "one",
-            "two",
-            "three"
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B2",
+            "B8",
+            "C1",
+            "C2",
+            "C2A",
+            "C3",
+            "C4",
+            "D1",
+            "D2",
+            "Sui Generis"
           ]
         }
       },
