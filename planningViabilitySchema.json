@@ -1,39 +1,130 @@
-{ "$schema": "http://json-schema.org/draft-07/schema#",
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
   "type": "object",
+  "version": "0.1.1",
   "propertyNames": {
-   "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
   },
-  "required": [ "application.identifier" ],
+  "required": [
+    "application.identifier"
+  ],
   "properties": {
-    "application.planningAuthorityID": { "type": "string" },
-    "application.identifier": { "type": "string" },
-    "application.name": { "type": "string" },
-    "property.addressPrimary": { "type": "string" },
-    "property.boundaryPolygon": 
-    	{
-    		"anyOf": [
-            {
-              "$ref": "http://geojson.org/schema/MultiPolygon.json"
-            },
-            {
-              "$ref": "http://geojson.org/schema/Polygon.json"
-            }
+    "application": {
+      "application.planningAuthorityID": {
+        "type": "string"
+      },
+      "application.identifier": {
+        "type": "string"
+      },
+      "application.name": {
+        "type": "string"
+      }
+    },
+    "property": {
+      "property.addressPrimary": {
+        "type": "string"
+      },
+      "property.centroidLatLng": {
+        "type": "string"
+      },
+      "property.boundaryPolygon": {
+        "anyOf": [
+          {
+            "$ref": "http://geojson.org/schema/MultiPolygon.json"
+          },
+          {
+            "$ref": "http://geojson.org/schema/Polygon.json"
+          }
+        ]
+      }
+    },
+    "proposal": {
+      "proposal.residentialUnits": {
+        "type": "number"
+      },
+      "proposal.habitableRooms": {
+        "type": "number"
+      },
+      "proposal.commercialArea": {
+        "type": "number"
+      },
+      "proposal.storeysMax": {
+        "type": "number"
+      },
+      "proposal.grossDevelopmentValue": {
+        "type": "number"
+      },
+      "proposal.constructionCostsTotal": {
+        "type": "number"
+      },
+      "proposal.professionalFeesTotal": {
+        "type": "number"
+      },
+      "proposal.marketingAndLettingFeesTotal": {
+        "type": "number"
+      },
+      "proposal.financeCostTotal": {
+        "type": "number"
+      },
+      "proposal.planningObligationsCostTotal": {
+        "type": "number"
+      },
+      "proposal.developerProfitTotal": {
+        "type": "number"
+      },
+      "proposal.residualLandValue": {
+        "type": "number"
+      },
+      "proposal.benchmarkLandValue": {
+        "type": "number"
+      },
+      "proposal.totalCosts": {
+        "type": "number"
+      },
+      "proposal.viabilityAssessmentAuthor": {
+        "type": "string"
+      },
+      "proposal.viabilityAssessmentOnBehalfOf": {
+        "type": "string"
+      },
+      "proposal.viabilityScenarioName": {
+        "type": "string"
+      },
+      "proposal.netSaleableArea": {
+        "type": "number"
+      },
+      "proposal.affordableHousingTenureMix": {
+        "market": {
+          "type": "number"
+        },
+        "social rented": {
+          "type": "number"
+        },
+        "intermediate": {
+          "type": "number"
+        }
+      },
+      "proposal.residentialUnitsMix": "XXXXXX",
+      "proposal.useClasses": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "one",
+            "two",
+            "three"
           ]
-  		},
-    "proposal.residentialUnits": { "type": "number" },
-    "proposal.habitableRooms": { "type": "number" },
-    "proposal.commercialArea": { "type": "number" },
-    "proposal.storiesMax": { "type": "number" },
-    "date": { "type": "string" },
-    "proposal.grossDevelopmentValue": { "type": "number" },
-    "proposal.constructionCostsTotal": { "type": "number" },
-    "proposal.professionalFeesTotal": { "type": "number" },
-    "proposal.marketingAndLettingFeesTotal": { "type": "number" },
-    "proposal.financeCostTotal": { "type": "number" },
-    "proposal.planningObligationsCostTotal": { "type": "number" },
-    "proposal.developerProfitTotal": { "type": "number" },
-    "proposal.residualLandValue": { "type": "number" },
-    "proposal.benchmarkLandValue": { "type": "number" }
+        }
+      },
+      "proposal.affordableHousingTotalUnits": {
+        "type": "number"
+      },
+      "proposal.viabilityAssessmentScenarioDate": {
+        "type": "string"
+      },
+      "proposal.salesValuesResidentialAverageByType": "XXXXXX",
+      "proposal.salesValuesResidentialAveragePerSqM": "XXXXXX"
     }
+  }
 }
