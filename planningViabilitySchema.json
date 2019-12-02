@@ -1,215 +1,463 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
-  "type": "object",
-  "version": "0.1.2",
-  "propertyNames": {
-    "pattern": "^[A-Za-z_][A-Za-z0-9_.]*$"
-  },
-  "additionalProperties": false,
-  "properties": {
-    "application": {
-      "type": "object",
-      "required": ["application.identifier"],
-      "properties": {
-        "application.planningAuthorityID": {
-          "type": "string"
-        },
-        "application.identifier": {
-          "type": "string"
-        },
-        "application.name": {
-          "type": "string"
-        }
-      }
-    },
-    "property": {
-    "type": "object",
-    "additionalProperties": false,
-    "properties":{
-      "property.addressPrimary": {
-        "type": "string"
-      },
-      "property.centroidLatLng": {
-        "type": "string"
-      },
-      "property.boundaryPolygon": {
-        "anyOf": [
-          {
-            "$ref": "http://geojson.org/schema/MultiPolygon.json"
-          },
-          {
-            "$ref": "http://geojson.org/schema/Polygon.json"
-          }
-        ]
-      }
-      }
-    },
-    "proposal": {
-    "type": "object",
-    "additionalProperties": false,
-    "properties":{
-      "proposal.residentialUnits": {
-        "type": "number"
-      },
-      "proposal.habitableRooms": {
-        "type": "number"
-      },
-      "proposal.commercialArea": {
-        "type": "number"
-      },
-      "proposal.storeysMax": {
-        "type": "number"
-      },
-      "proposal.grossDevelopmentValue": {
-        "type": "number"
-      },
-      "proposal.constructionCostsTotal": {
-        "type": "number"
-      },
-      "proposal.professionalFeesTotal": {
-        "type": "number"
-      },
-      "proposal.marketingAndLettingFeesTotal": {
-        "type": "number"
-      },
-      "proposal.financeCostTotal": {
-        "type": "number"
-      },
-      "proposal.planningObligationsCostTotal": {
-        "type": "number"
-      },
-      "proposal.developerProfitTotal": {
-        "type": "number"
-      },
-      "proposal.residualLandValue": {
-        "type": "number"
-      },
-      "proposal.benchmarkLandValue": {
-        "type": "number"
-      },
-      "proposal.totalCosts": {
-        "type": "number"
-      },
-      "proposal.viabilityAssessmentAuthor": {
-        "type": "string"
-      },
-      "proposal.viabilityAssessmentOnBehalfOf": {
-        "type": "string"
-      },
-      "proposal.viabilityScenarioName": {
-        "type": "string"
-      },
-      "proposal.netSaleableArea": {
-        "type": "number"
-      },
-      "proposal.affordableHousingTenureMix": {
-        "market": {
-          "type": "number"
-        },
-        "social rented": {
-          "type": "number"
-        },
-        "intermediate": {
-          "type": "number"
-        }
-      },
-      "proposal.residentialUnitsMix": {
-        "studio": {
-          "type": "number"
-        },
-        "1 bed": {
-          "type": "number"
-        },
-        "2 bed": {
-          "type": "number"
-        },
-        "3 bed": {
-          "type": "number"
-        },
-        "4 bed": {
-          "type": "number"
-        },
-        "5+ bed": {
-          "type": "number"
-        }
-      },
-      "proposal.useClasses": {
-        "type": "array",
-        "classes": {
-          "type": "string",
-          "enum": [
-            "A1",
-            "A2",
-            "A3",
-            "A4",
-            "A5",
-            "B1",
-            "B2",
-            "B8",
-            "C1",
-            "C2",
-            "C2A",
-            "C3",
-            "C4",
-            "D1",
-            "D2",
-            "Sui Generis"
-          ]
-        }
-      },
-      "proposal.affordableHousingTotalUnits": {
-        "type": "number"
-      },
-      "proposal.viabilityAssessmentScenarioDate": {
-        "type": "string"
-      },
-      "proposal.salesValuesResidentialAverageByType": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "array",
-            "classes": {
-              "type": "string",
-              "enum": [
-                "studio",
-                "1 bed",
-                "2 bed",
-                "3 bed",
-                "4 bed",
-                "5+ bed"
-              ]
-            }
-          },
-          "value": {
-            "type": "string",
-            "description": "the value"
-          }
-        }
-      },
-      "proposal.salesValuesResidentialAveragePerSqM": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "array",
-            "classes": {
-              "type": "string",
-              "enum": [
-                "studio",
-                "1 bed",
-                "2 bed",
-                "3 bed",
-                "4 bed",
-                "5+ bed"
-              ]
-            }
-          },
-          "value": {
-            "type": "number",
-            "description": "Average sales value for this property type per square metre"
-          }
-        }
-      }}
-    }
-  }
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
+	"type": "object",
+	"version": "0.2.0.",
+	"propertyNames": {
+		"pattern": "^[A-Za-z_][A-Za-z0-9_.]*$"
+	},
+	"additionalProperties": false,
+	"properties": {
+		"application": {
+			"type": "object",
+			"required": [
+				"application.identifier"
+			],
+			"properties": {
+				"application.planningAuthorityID": {
+					"type": "string"
+				},
+				"application.identifier": {
+					"type": "string"
+				},
+				"application.applicant": {
+					"type": "string"
+				},
+				"application.name": {
+					"type": "string"
+				}
+			}
+		},
+		"property": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"property.addressPrimary": {
+					"type": "string"
+				},
+				"property.centroidLatLng": {
+					"type": "string"
+				},
+				"property.boundaryPolygon": {
+					"anyOf": [
+						{
+							"$ref": "http://geojson.org/schema/MultiPolygon.json"
+						},
+						{
+							"$ref": "http://geojson.org/schema/Polygon.json"
+						}
+					]
+				}
+			}
+		},
+		"proposal": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"proposal.residentialUnits": {
+					"type": "number"
+				},
+				"proposal.habitableRooms": {
+					"type": "number"
+				},
+				"proposal.commercialArea": {
+					"type": "number"
+				},
+				"proposal.storeysMax": {
+					"type": "number"
+				},
+				"proposal.grossDevelopmentValue": {
+					"type": "number"
+				},
+				"proposal.constructionCostsTotal": {
+					"type": "number"
+				},
+				"proposal.professionalFeesTotal": {
+					"type": "number"
+				},
+				"proposal.marketingAndLettingFeesTotal": {
+					"type": "number"
+				},
+				"proposal.financeCostTotal": {
+					"type": "number"
+				},
+				"proposal.planningObligationsCostTotal": {
+					"type": "number"
+				},
+				"proposal.developerProfitTotal": {
+					"type": "number"
+				},
+				"proposal.residualLandValue": {
+					"type": "number"
+				},
+				"proposal.benchmarkLandValue": {
+					"type": "number"
+				},
+				"proposal.totalCosts": {
+					"type": "number"
+				},
+				"proposal.viabilityAssessmentAuthor": {
+					"type": "string"
+				},
+				"proposal.viabilityAssessmentOnBehalfOf": {
+					"type": "string"
+				},
+				"proposal.viabilityScenarioName": {
+					"type": "string"
+				},
+				"proposal.netSaleableArea": {
+					"type": "number"
+				},
+				"proposal.affordableHousingTenureMix": {
+					"market": {
+						"type": "number"
+					},
+					"social rented": {
+						"type": "number"
+					},
+					"intermediate": {
+						"type": "number"
+					}
+				},
+				"proposal.residentialUnitsMix": {
+					"studio": {
+						"type": "number"
+					},
+					"1 bed": {
+						"type": "number"
+					},
+					"2 bed": {
+						"type": "number"
+					},
+					"3 bed": {
+						"type": "number"
+					},
+					"4 bed": {
+						"type": "number"
+					},
+					"5+ bed": {
+						"type": "number"
+					}
+				},
+				"proposal.useClasses": {
+					"type": "array",
+					"classes": {
+						"type": "string",
+						"enum": [
+							"A1",
+							"A2",
+							"A3",
+							"A4",
+							"A5",
+							"B1",
+							"B2",
+							"B8",
+							"C1",
+							"C2",
+							"C2A",
+							"C3",
+							"C4",
+							"D1",
+							"D2",
+							"Sui Generis"
+						]
+					}
+				},
+				"proposal.affordableHousingTotalUnits": {
+					"type": "number"
+				},
+				"proposal.viabilityAssessmentScenarioDate": {
+					"type": "string"
+				},
+				"proposal.rentalValuesResidentialAverageByTypePerCalendarMonth": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"studio": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"1 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"2 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"3 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"4 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"5+ bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				},
+				"proposal.salesValuesResidentialAverageByType": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"studio": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"1 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"2 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"3 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"4 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"5+ bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				},
+				"proposal.salesValuesResidentialAveragePerSqM": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"studio": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"1 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"2 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"3 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"4 bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						},
+						"5+ bed": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"market": {
+									"type": "number"
+								},
+								"social rented": {
+									"type": "number"
+								},
+								"intermediate": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
