@@ -36,9 +36,21 @@ https://github.com/wearefuturegov/planning-viability-doc-schema
 
 | Property                          | Type   | Required     |
 | --------------------------------- | ------ | ------------ |
+| `application.applicant`           | string | Optional     |
 | `application.identifier`          | string | **Required** |
 | `application.name`                | string | Optional     |
 | `application.planningAuthorityID` | string | Optional     |
+
+#### application.applicant
+
+`application.applicant`
+
+- is optional
+- type: `string`
+
+##### application.applicant Type
+
+`string`
 
 #### application.identifier
 
@@ -144,33 +156,34 @@ https://github.com/wearefuturegov/planning-viability-doc-schema
 
 `object` with following properties:
 
-| Property                                       | Type   | Required |
-| ---------------------------------------------- | ------ | -------- |
-| `proposal.affordableHousingTenureMix`          |        | Optional |
-| `proposal.affordableHousingTotalUnits`         | number | Optional |
-| `proposal.benchmarkLandValue`                  | number | Optional |
-| `proposal.commercialArea`                      | number | Optional |
-| `proposal.constructionCostsTotal`              | number | Optional |
-| `proposal.developerProfitTotal`                | number | Optional |
-| `proposal.financeCostTotal`                    | number | Optional |
-| `proposal.grossDevelopmentValue`               | number | Optional |
-| `proposal.habitableRooms`                      | number | Optional |
-| `proposal.marketingAndLettingFeesTotal`        | number | Optional |
-| `proposal.netSaleableArea`                     | number | Optional |
-| `proposal.planningObligationsCostTotal`        | number | Optional |
-| `proposal.professionalFeesTotal`               | number | Optional |
-| `proposal.residentialUnits`                    | number | Optional |
-| `proposal.residentialUnitsMix`                 |        | Optional |
-| `proposal.residualLandValue`                   | number | Optional |
-| `proposal.salesValuesResidentialAverageByType` | object | Optional |
-| `proposal.salesValuesResidentialAveragePerSqM` | object | Optional |
-| `proposal.storeysMax`                          | number | Optional |
-| `proposal.totalCosts`                          | number | Optional |
-| `proposal.useClasses`                          | array  | Optional |
-| `proposal.viabilityAssessmentAuthor`           | string | Optional |
-| `proposal.viabilityAssessmentOnBehalfOf`       | string | Optional |
-| `proposal.viabilityAssessmentScenarioDate`     | string | Optional |
-| `proposal.viabilityScenarioName`               | string | Optional |
+| Property                                                        | Type   | Required |
+| --------------------------------------------------------------- | ------ | -------- |
+| `proposal.affordableHousingTenureMix`                           |        | Optional |
+| `proposal.affordableHousingTotalUnits`                          | number | Optional |
+| `proposal.benchmarkLandValue`                                   | number | Optional |
+| `proposal.commercialArea`                                       | number | Optional |
+| `proposal.constructionCostsTotal`                               | number | Optional |
+| `proposal.developerProfitTotal`                                 | number | Optional |
+| `proposal.financeCostTotal`                                     | number | Optional |
+| `proposal.grossDevelopmentValue`                                | number | Optional |
+| `proposal.habitableRooms`                                       | number | Optional |
+| `proposal.marketingAndLettingFeesTotal`                         | number | Optional |
+| `proposal.netSaleableArea`                                      | number | Optional |
+| `proposal.planningObligationsCostTotal`                         | number | Optional |
+| `proposal.professionalFeesTotal`                                | number | Optional |
+| `proposal.rentalValuesResidentialAverageByTypePerCalendarMonth` | object | Optional |
+| `proposal.residentialUnits`                                     | number | Optional |
+| `proposal.residentialUnitsMix`                                  |        | Optional |
+| `proposal.residualLandValue`                                    | number | Optional |
+| `proposal.salesValuesResidentialAverageByType`                  | object | Optional |
+| `proposal.salesValuesResidentialAveragePerSqM`                  | object | Optional |
+| `proposal.storeysMax`                                           | number | Optional |
+| `proposal.totalCosts`                                           | number | Optional |
+| `proposal.useClasses`                                           | array  | Optional |
+| `proposal.viabilityAssessmentAuthor`                            | string | Optional |
+| `proposal.viabilityAssessmentOnBehalfOf`                        | string | Optional |
+| `proposal.viabilityAssessmentScenarioDate`                      | string | Optional |
+| `proposal.viabilityScenarioName`                                | string | Optional |
 
 #### proposal.affordableHousingTenureMix
 
@@ -330,6 +343,326 @@ Unknown type ``.
 
 `number`
 
+#### proposal.rentalValuesResidentialAverageByTypePerCalendarMonth
+
+`proposal.rentalValuesResidentialAverageByTypePerCalendarMonth`
+
+- is optional
+- type: `object`
+
+##### proposal.rentalValuesResidentialAverageByTypePerCalendarMonth Type
+
+`object` with following properties:
+
+| Property | Type   | Required |
+| -------- | ------ | -------- |
+| `1 bed`  | object | Optional |
+| `2 bed`  | object | Optional |
+| `3 bed`  | object | Optional |
+| `4 bed`  | object | Optional |
+| `5+ bed` | object | Optional |
+| `studio` | object | Optional |
+
+#### 1 bed
+
+`1 bed`
+
+- is optional
+- type: `object`
+
+##### 1 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 2 bed
+
+`2 bed`
+
+- is optional
+- type: `object`
+
+##### 2 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 3 bed
+
+`3 bed`
+
+- is optional
+- type: `object`
+
+##### 3 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 4 bed
+
+`4 bed`
+
+- is optional
+- type: `object`
+
+##### 4 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 5+ bed
+
+`5+ bed`
+
+- is optional
+- type: `object`
+
+##### 5+ bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### studio
+
+`studio`
+
+- is optional
+- type: `object`
+
+##### studio Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
 #### proposal.residentialUnits
 
 `proposal.residentialUnits`
@@ -400,32 +733,312 @@ Unknown type ``.
 
 | Property | Type   | Required |
 | -------- | ------ | -------- |
-| `key`    | array  | Optional |
-| `value`  | string | Optional |
+| `1 bed`  | object | Optional |
+| `2 bed`  | object | Optional |
+| `3 bed`  | object | Optional |
+| `4 bed`  | object | Optional |
+| `5+ bed` | object | Optional |
+| `studio` | object | Optional |
 
-#### key
+#### 1 bed
 
-`key`
-
-- is optional
-- type: `array`
-
-##### key Type
-
-Array type: `array`
-
-#### value
-
-the value
-
-`value`
+`1 bed`
 
 - is optional
-- type: `string`
+- type: `object`
 
-##### value Type
+##### 1 bed Type
 
-`string`
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 2 bed
+
+`2 bed`
+
+- is optional
+- type: `object`
+
+##### 2 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 3 bed
+
+`3 bed`
+
+- is optional
+- type: `object`
+
+##### 3 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 4 bed
+
+`4 bed`
+
+- is optional
+- type: `object`
+
+##### 4 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 5+ bed
+
+`5+ bed`
+
+- is optional
+- type: `object`
+
+##### 5+ bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### studio
+
+`studio`
+
+- is optional
+- type: `object`
+
+##### studio Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
 
 #### proposal.salesValuesResidentialAveragePerSqM
 
@@ -440,30 +1053,310 @@ the value
 
 | Property | Type   | Required |
 | -------- | ------ | -------- |
-| `key`    | array  | Optional |
-| `value`  | number | Optional |
+| `1 bed`  | object | Optional |
+| `2 bed`  | object | Optional |
+| `3 bed`  | object | Optional |
+| `4 bed`  | object | Optional |
+| `5+ bed` | object | Optional |
+| `studio` | object | Optional |
 
-#### key
+#### 1 bed
 
-`key`
+`1 bed`
 
 - is optional
-- type: `array`
+- type: `object`
 
-##### key Type
+##### 1 bed Type
 
-Array type: `array`
+`object` with following properties:
 
-#### value
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
 
-Average sales value for this property type per square metre
+#### intermediate
 
-`value`
+`intermediate`
 
 - is optional
 - type: `number`
 
-##### value Type
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 2 bed
+
+`2 bed`
+
+- is optional
+- type: `object`
+
+##### 2 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 3 bed
+
+`3 bed`
+
+- is optional
+- type: `object`
+
+##### 3 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 4 bed
+
+`4 bed`
+
+- is optional
+- type: `object`
+
+##### 4 bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### 5+ bed
+
+`5+ bed`
+
+- is optional
+- type: `object`
+
+##### 5+ bed Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
+
+`number`
+
+#### studio
+
+`studio`
+
+- is optional
+- type: `object`
+
+##### studio Type
+
+`object` with following properties:
+
+| Property        | Type   | Required |
+| --------------- | ------ | -------- |
+| `intermediate`  | number | Optional |
+| `market`        | number | Optional |
+| `social rented` | number | Optional |
+
+#### intermediate
+
+`intermediate`
+
+- is optional
+- type: `number`
+
+##### intermediate Type
+
+`number`
+
+#### market
+
+`market`
+
+- is optional
+- type: `number`
+
+##### market Type
+
+`number`
+
+#### social rented
+
+`social rented`
+
+- is optional
+- type: `number`
+
+##### social rented Type
 
 `number`
 
