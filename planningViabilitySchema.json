@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://github.com/wearefuturegov/planning-viability-doc-schema",
 	"type": "object",
-	"version": "0.2.0.",
+	"version": "0.2.1.",
 	"propertyNames": {
 		"pattern": "^[A-Za-z_][A-Za-z0-9_.]*$"
 	},
@@ -70,6 +70,9 @@
 					"type": "number"
 				},
 				"proposal.constructionCostsTotal": {
+					"type": "number"
+				},
+				"proposal.constructionCostsAveragePerSqM": {
 					"type": "number"
 				},
 				"proposal.professionalFeesTotal": {
@@ -454,6 +457,24 @@
 									"type": "number"
 								}
 							}
+						}
+					}
+				},
+				"proposal.salesValuesCommercialAveragePerSqM": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"retail": {
+							"type": "number"
+						},
+						"office": {
+							"type": "number"
+						},
+						"industrial": {
+							"type": "number"
+						},
+						"other": {
+							"type": "number"
 						}
 					}
 				}

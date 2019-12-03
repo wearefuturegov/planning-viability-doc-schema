@@ -162,6 +162,7 @@ https://github.com/wearefuturegov/planning-viability-doc-schema
 | `proposal.affordableHousingTotalUnits`                          | number | Optional |
 | `proposal.benchmarkLandValue`                                   | number | Optional |
 | `proposal.commercialArea`                                       | number | Optional |
+| `proposal.constructionCostsAveragePerSqM`                       | number | Optional |
 | `proposal.constructionCostsTotal`                               | number | Optional |
 | `proposal.developerProfitTotal`                                 | number | Optional |
 | `proposal.financeCostTotal`                                     | number | Optional |
@@ -175,6 +176,7 @@ https://github.com/wearefuturegov/planning-viability-doc-schema
 | `proposal.residentialUnits`                                     | number | Optional |
 | `proposal.residentialUnitsMix`                                  |        | Optional |
 | `proposal.residualLandValue`                                    | number | Optional |
+| `proposal.salesValuesCommercialAveragePerSqM`                   | object | Optional |
 | `proposal.salesValuesResidentialAverageByType`                  | object | Optional |
 | `proposal.salesValuesResidentialAveragePerSqM`                  | object | Optional |
 | `proposal.storeysMax`                                           | number | Optional |
@@ -241,6 +243,17 @@ Unknown type ``.
 - type: `number`
 
 ##### proposal.commercialArea Type
+
+`number`
+
+#### proposal.constructionCostsAveragePerSqM
+
+`proposal.constructionCostsAveragePerSqM`
+
+- is optional
+- type: `number`
+
+##### proposal.constructionCostsAveragePerSqM Type
 
 `number`
 
@@ -717,6 +730,68 @@ Unknown type ``.
 - type: `number`
 
 ##### proposal.residualLandValue Type
+
+`number`
+
+#### proposal.salesValuesCommercialAveragePerSqM
+
+`proposal.salesValuesCommercialAveragePerSqM`
+
+- is optional
+- type: `object`
+
+##### proposal.salesValuesCommercialAveragePerSqM Type
+
+`object` with following properties:
+
+| Property     | Type   | Required |
+| ------------ | ------ | -------- |
+| `industrial` | number | Optional |
+| `office`     | number | Optional |
+| `other`      | number | Optional |
+| `retail`     | number | Optional |
+
+#### industrial
+
+`industrial`
+
+- is optional
+- type: `number`
+
+##### industrial Type
+
+`number`
+
+#### office
+
+`office`
+
+- is optional
+- type: `number`
+
+##### office Type
+
+`number`
+
+#### other
+
+`other`
+
+- is optional
+- type: `number`
+
+##### other Type
+
+`number`
+
+#### retail
+
+`retail`
+
+- is optional
+- type: `number`
+
+##### retail Type
 
 `number`
 

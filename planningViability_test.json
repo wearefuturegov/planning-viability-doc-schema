@@ -11,26 +11,11 @@
       "type": "Polygon",
       "coordinates": [
         [
-          [
-            30,
-            10
-          ],
-          [
-            40,
-            40
-          ],
-          [
-            20,
-            40
-          ],
-          [
-            10,
-            20
-          ],
-          [
-            30,
-            10
-          ]
+          [30,10],
+          [40,40],
+          [20,40],
+          [10,20],
+          [30,10]
         ]
       ]
     }
@@ -58,6 +43,8 @@
       "mar": 123,
       "intermediate": 321
     },
-    "proposal.residentialUnits": 22
+    "proposal.residentialUnits": 22,
+    "proposal.salesValuesResidentialAveragePerSqM": {
+    	"studio": {"market": 123123, "social rented": 2345,  "intermediate": 345}}
   }
 }
