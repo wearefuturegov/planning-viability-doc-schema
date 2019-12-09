@@ -1,6 +1,8 @@
 # Planning Viability Document Schema
 
-**Purpose:** Define a schema for JSON data storing planning viability assessment data.
+## Description
+
+Defines a schema for JSON data storing planning viability assessment data.
 
 **Current Version:** 0.2.1
 
@@ -1519,3 +1521,7 @@ Array type: `array`
 ##### proposal.viabilityScenarioName Type
 
 `string`
+
+## Contact
+
+[https://github.com/raemond](https://github.com/raemond)
